@@ -1,0 +1,61 @@
+1. display(bool& flag)
+Purpose:
+Displays a welcome screen with a border of asterisks and the message "Welcome to Garbage Collection System."
+
+Parameters:
+
+flag: A reference to a boolean value. If flag is true, the function will introduce a delay of 50 milliseconds between characters.
+Functionality:
+
+Sets console color to green on black using system("color 0a").
+Sets console dimensions to 100 columns and 30 lines using system("mode con cols=100 lines=30").
+Prints a border of asterisks, then the welcome message, followed by another border of asterisks.
+If flag is true, introduces a delay between each character printed.
+
+2.start(int choice)
+Purpose:
+Handles user input to navigate through different sections of the application based on the user's choice.
+
+Parameters:
+
+choice: An integer representing the user's choice from the main menu.
+Functionality:
+
+Clears the console screen using system("cls").
+Based on the choice value:
+Calls c.controllerMenu(g) if choice is 1.
+Calls d.Menu(g) if choice is 2.
+Does nothing if choice is 3 or invalid.
+Ends execution of the function and returns to the caller.
+
+3. main()
+Purpose:
+Main entry point of the application. Manages the main menu and user interactions, including login, registration, and navigating to different sections based on the user role.
+
+Functionality:
+
+Creates instances of UI, Graph, Controller, and TruckDriver classes.
+Continuously displays the welcome screen and prompts the user for input.
+Processes user choices:
+Calls u.Login() to authenticate the user.
+Calls u.CheckNature(u.getEmail(), u.getPassword()) to determine the user's role.
+Calls start(cho) to navigate to the appropriate menu based on the user's role.
+Calls u.Register() for user registration.
+Exits the program if choice is 3.
+
+
+4.header File: Everything.h
+
+Defines the classes and methods used in the code:
+
+Classes:
+Graph: Placeholder class for graph-related operations.
+Controller: Contains the controllerMenu() method.
+TruckDriver: Contains the Menu() method.
+UI: Contains methods for user login, registration, and role checking.
+Methods:
+
+Login(): Handles user login.
+Register(): Handles user registration.
+CheckNature(const string& email, const string& password): Determines the user's role based on email and password.
+getEmail(), getPassword(): Retrieves user email and password
